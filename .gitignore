@@ -1,0 +1,12 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+
+# Model files (large)
+*.pkl
+*.joblib
+
+# Jupyter/Colab checkpoints
+.ipynb_checkpoints/
