@@ -1,12 +1,37 @@
-# Virtual environment
+# Virtual Environment
 venv/
+env/
+ENV/
 
-# Python cache
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
 
-# Model files (large)
-*.pkl
+# Machine Learning Models (regenerated files)
 *.joblib
+*.pkl
+*.h5
+models/
 
-# Jupyter/Colab checkpoints
-.ipynb_checkpoints/
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Streamlit
+.streamlit/secrets.toml
