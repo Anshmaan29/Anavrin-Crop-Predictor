@@ -136,7 +136,7 @@ streamlit run app.py
 
 ## 🌐 **Live Demo**
 
-🔗 **[View Live Application](your-streamlit-url-here)**
+🔗 **[View Live Application](anavrin.streamlit.app)**
 
 Experience the full functionality of Anavrin with our deployed version. No installation required!
 
