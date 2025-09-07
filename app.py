@@ -12,11 +12,13 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Advanced CSS with professional design
+# Inject advanced CSS with professional design
 st.markdown("""
 <style>
+    /* Import Google Fonts */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap');
-    
+
+    /* Color Variables */
     :root {
         --primary: #6a11cb;
         --primary-dark: #2575fc;
@@ -32,13 +34,15 @@ st.markdown("""
         --card-shadow: 0 10px 30px rgba(106, 17, 203, 0.15);
         --hover-shadow: 0 15px 40px rgba(106, 17, 203, 0.25);
     }
-    
+
+    /* Reset Margins and Padding */
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-    
+
+    /* Body & Font styles */
     body {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         background-color: var(--light);
@@ -46,11 +50,12 @@ st.markdown("""
         overflow-x: hidden;
         line-height: 1.6;
     }
-    
-    /* Hero Section with Background Image */
+
+    /* Hero Section */
     .hero-section {
         min-height: 100vh;
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+        background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6)),
+            url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -60,19 +65,16 @@ st.markdown("""
         position: relative;
         overflow: hidden;
     }
-    
     .hero-content {
         text-align: center;
         padding: 2rem;
         max-width: 900px;
         animation: fadeInUp 1.5s ease;
     }
-    
     @keyframes fadeInUp {
         0% { opacity: 0; transform: translateY(50px); }
         100% { opacity: 1; transform: translateY(0); }
     }
-    
     .hero-title {
         font-family: 'Playfair Display', serif;
         font-size: clamp(2.5rem, 7vw, 5.5rem);
@@ -81,26 +83,28 @@ st.markdown("""
         margin-bottom: 1.5rem;
         letter-spacing: -1px;
         line-height: 1.1;
-        background: linear-gradient(45deg, #fff, #d9b3ff, #b380ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        /* Use solid white for safest display */
+        /* You can replace with gradient if you want to experiment */
+        color: white; 
+        background: none;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        background-clip: unset;
     }
-    
     .hero-subtitle {
         font-size: clamp(1.2rem, 3vw, 1.8rem);
         color: rgba(255, 255, 255, 0.9);
         margin-bottom: 3rem;
         font-weight: 300;
     }
-    
+
     /* Main Container */
     .main-container {
         max-width: 1400px;
         margin: 0 auto;
         padding: 2rem;
     }
-    
+
     /* Section Headings */
     .section-heading {
         font-family: 'Playfair Display', serif;
@@ -111,7 +115,6 @@ st.markdown("""
         position: relative;
         padding-bottom: 1rem;
     }
-    
     .section-heading::after {
         content: '';
         position: absolute;
@@ -123,50 +126,45 @@ st.markdown("""
         background: var(--gradient-primary);
         border-radius: 2px;
     }
-    
-    /* Feature Cards - Purple Gradient */
+
+    /* Feature Cards */
     .feature-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
         margin: 2rem 0 3rem;
     }
-    
     .feature-card {
-        background: linear-gradient(135deg, #8a2be2 0%, #6a11cb 100%);
+        background: var(--gradient-secondary);
         border-radius: 16px;
         padding: 2.5rem 2rem;
         text-align: center;
-        box-shadow: 0 15px 35px rgba(138, 43, 226, 0.3);
+        box-shadow: var(--card-shadow);
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         border: 1px solid rgba(255, 255, 255, 0.2);
         color: white;
     }
-    
     .feature-card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 20px 45px rgba(138, 43, 226, 0.4);
+        box-shadow: var(--hover-shadow);
     }
-    
     .feature-icon {
         font-size: 3.5rem;
         margin-bottom: 1.5rem;
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
     }
-    
     .feature-title {
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 1rem;
         color: white;
     }
-    
     .feature-description {
         color: rgba(255, 255, 255, 0.9);
         line-height: 1.6;
     }
     
-    /* Glass Cards for Inputs */
+    /* Glass Cards */
     .glass-card {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
@@ -177,12 +175,10 @@ st.markdown("""
         border: 1px solid rgba(138, 43, 226, 0.15);
         transition: all 0.3s ease;
     }
-    
     .glass-card:hover {
         box-shadow: var(--hover-shadow);
         transform: translateY(-5px);
     }
-    
     .card-title {
         font-size: 1.5rem;
         font-weight: 600;
@@ -207,28 +203,25 @@ st.markdown("""
         box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
         margin: 2rem 0;
     }
-    
     .stButton > button:hover {
         transform: translateY(-3px);
         box-shadow: 0 10px 25px rgba(106, 17, 203, 0.4);
         background: var(--primary-dark);
     }
     
-    /* Slider Styling with Rounded Corners */
+    /* Slider Styling */
     .stSlider > div > div {
         background: var(--gradient-primary) !important;
         border-radius: 10px !important;
     }
-    
     .stSlider > div > div > div {
         border-radius: 10px !important;
     }
-    
     .stSlider > div > div > div > div {
         border-radius: 10px !important;
     }
     
-    /* Results Container */
+    /* Results */
     .result-container {
         background: var(--gradient-secondary);
         border-radius: 20px;
@@ -239,25 +232,21 @@ st.markdown("""
         box-shadow: 0 15px 35px rgba(138, 43, 226, 0.25);
         animation: fadeIn 0.8s ease;
     }
-    
     .result-title {
         font-size: 2.5rem;
         margin: 1rem 0;
         font-weight: 700;
     }
-    
     .result-subtitle {
         font-size: 1.2rem;
         margin: 1rem 0;
         opacity: 0.95;
     }
-    
     .confidence-score {
         font-size: 1.8rem;
         margin: 2rem 0;
         font-weight: 600;
     }
-    
     .crop-icon {
         font-size: 5rem;
         margin-bottom: 1.5rem;
@@ -275,7 +264,7 @@ st.markdown("""
         to { opacity: 1; }
     }
     
-    /* Cultivation Recommendations Styling */
+    /* Cultivation Recommendations */
     .cultivation-recommendations {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border-radius: 20px;
@@ -284,7 +273,6 @@ st.markdown("""
         color: white;
         box-shadow: 0 15px 35px rgba(102, 126, 234, 0.25);
     }
-    
     .recommendations-title {
         font-size: 1.8rem;
         font-weight: 700;
@@ -292,13 +280,11 @@ st.markdown("""
         margin-bottom: 2.5rem;
         color: white;
     }
-    
     .recommendations-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1.5rem;
     }
-    
     .recommendation-item {
         background: rgba(255, 255, 255, 0.15);
         backdrop-filter: blur(10px);
@@ -310,46 +296,37 @@ st.markdown("""
         transition: all 0.3s ease;
         border: 1px solid rgba(255, 255, 255, 0.2);
     }
-    
     .recommendation-item:hover {
         transform: translateY(-5px);
         background: rgba(255, 255, 255, 0.25);
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
-    
     .rec-icon {
         font-size: 2rem;
         flex-shrink: 0;
     }
-    
     .rec-text {
         color: rgba(255, 255, 255, 0.95);
         line-height: 1.6;
         font-size: 0.95rem;
     }
-    
     /* Individual recommendation colors */
     .recommendation-item.soil {
         border-left: 4px solid #4CAF50;
     }
-    
     .recommendation-item.water {
         border-left: 4px solid #2196F3;
     }
-    
     .recommendation-item.rotation {
         border-left: 4px solid #FF9800;
     }
-    
     .recommendation-item.pest {
         border-left: 4px solid #F44336;
     }
-    
     .recommendation-item.irrigation {
         border-left: 4px solid #9C27B0;
     }
-    
-    /* Loading Animation */
+    /* Loading animation */
     .loader {
         display: flex;
         justify-content: center;
@@ -357,7 +334,6 @@ st.markdown("""
         height: 100px;
         margin: 2rem 0;
     }
-    
     .loader-dot {
         width: 15px;
         height: 15px;
@@ -366,20 +342,16 @@ st.markdown("""
         border-radius: 50%;
         animation: bounce 1.5s infinite;
     }
-    
     .loader-dot:nth-child(2) {
         animation-delay: 0.2s;
     }
-    
     .loader-dot:nth-child(3) {
         animation-delay: 0.4s;
     }
-    
     @keyframes bounce {
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-15px); }
     }
-    
     /* Footer */
     .footer {
         text-align: center;
@@ -389,26 +361,21 @@ st.markdown("""
         color: white;
         border-radius: 20px 20px 0 0;
     }
-    
     /* Hide Streamlit Elements */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
-    
     /* Responsive Design */
     @media (max-width: 768px) {
         .hero-title {
             font-size: 2.5rem;
         }
-        
         .glass-card {
             padding: 1.5rem;
         }
-        
         .feature-grid {
             grid-template-columns: 1fr;
         }
-        
         .recommendations-grid {
             grid-template-columns: 1fr;
         }
@@ -426,10 +393,10 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Main Content
+# Main Content Container
 st.markdown('<div class="main-container">', unsafe_allow_html=True)
 
-# Feature Introduction
+# Feature Cards
 st.markdown("""
 <div class="feature-grid">
     <div class="feature-card">
@@ -450,7 +417,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Input Section
+# Parameters Input Section with Columns
 st.markdown('<h2 class="section-heading">Configure Your Parameters</h2>', unsafe_allow_html=True)
 
 col1, col2 = st.columns(2)
@@ -476,13 +443,14 @@ with col2:
     
     st.markdown('</div>', unsafe_allow_html=True)
 
-# Analysis Button
+# Analyze Button with Center Alignment
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
     analyze_button = st.button("🚀 ANALYZE & PREDICT", key="analyze", help="Click to get AI-powered crop recommendations")
 
+# Action on Clicking Button
 if analyze_button:
-    # Simple loading animation
+    # Loading animation
     st.markdown("""
     <div class="loader">
         <div class="loader-dot"></div>
@@ -498,7 +466,7 @@ if analyze_button:
             progress_bar.progress(i + 1)
         progress_bar.empty()
     
-    # Generate recommendations
+    # Sample Crop Recommendations
     crops_data = {
         "Rice": {"icon": "🌾", "season": "4-6 months", "water": "High", "yield": "4-6 tons/ha"},
         "Wheat": {"icon": "🌾", "season": "3-4 months", "water": "Medium", "yield": "3-4 tons/ha"},
@@ -514,7 +482,7 @@ if analyze_button:
     crop_info = crops_data[recommended_crop]
     confidence = round(random.uniform(0.82, 0.97) * 100, 2)
     
-    # Clean Results Display - NO HTML CODE VISIBLE
+    # Display Results
     st.markdown(f"""
     <div class="result-container">
         <div class="crop-icon">{crop_info["icon"]}</div>
@@ -527,23 +495,20 @@ if analyze_button:
     </div>
     """, unsafe_allow_html=True)
     
-    # Display parameters in a clean grid using Streamlit columns
+    # Show input parameters cleanly
     st.markdown("### 📊 **Analysis Parameters**")
     col1, col2, col3 = st.columns(3)
-    
     with col1:
-        st.metric("Nitrogen", f"{N} ppm", delta=None)
-        st.metric("Phosphorus", f"{P} ppm", delta=None)
-    
+        st.metric("Nitrogen", f"{N} ppm")
+        st.metric("Phosphorus", f"{P} ppm")
     with col2:
-        st.metric("Potassium", f"{K} ppm", delta=None)
-        st.metric("pH Level", f"{ph}", delta=None)
-    
+        st.metric("Potassium", f"{K} ppm")
+        st.metric("pH Level", f"{ph}")
     with col3:
-        st.metric("Temperature", f"{temperature:.1f}°C", delta=None)
-        st.metric("Humidity", f"{humidity:.1f}%", delta=None)
+        st.metric("Temperature", f"{temperature:.1f}°C")
+        st.metric("Humidity", f"{humidity:.1f}%")
     
-    # Enhanced Cultivation Recommendations with Colors
+    # Cultivation Recommendations
     st.markdown("""
     <div class="cultivation-recommendations">
         <h3 class="recommendations-title">📋 Cultivation Recommendations</h3>
@@ -572,7 +537,7 @@ if analyze_button:
     </div>
     """, unsafe_allow_html=True)
 
-# Footer
+# Footer Section
 st.markdown("""
 <div class="footer">
     <h3>🌾 Anavrin - The Crop Predictor</h3>
@@ -581,4 +546,4 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-st.markdown('</div>', unsafe_allow_html=True)  # Close main-container
+st.markdown('</div>', unsafe_allow_html=True)  # Close main container div
